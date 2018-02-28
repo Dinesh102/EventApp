@@ -39,7 +39,7 @@ public class EventController {
     public ResponseEntity<?> post(@RequestBody Event event, UriComponentsBuilder ucBuilder) {
         eventService.save(event);
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/api/events/get/{id}").buildAndExpand(event.getId()).toUri());
+        headers.setLocation(ucBuilder.path("/api/events/get/{eventId}").buildAndExpand(event.getId()).toUri());
         return new ResponseEntity<>(headers, HttpStatus.OK);
 
     }
