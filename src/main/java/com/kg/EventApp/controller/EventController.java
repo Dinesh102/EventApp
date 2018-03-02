@@ -38,15 +38,9 @@ public class EventController {
     @PostMapping("/post")
     public ResponseEntity<?> post(@RequestBody Event event, UriComponentsBuilder ucBuilder) {
         eventService.save(event);
-<<<<<<< HEAD
-		HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("api/events/get/{eventId}").buildAndExpand(event.getId()).toUri());
-		
-=======
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/api/events/get/{eventId}").buildAndExpand(event.getId()).toUri());
->>>>>>> 9d292d700fafd411f28ad3bfc60351a8322e2b87
-        return new ResponseEntity<>(headers, HttpStatus.OK);
+        headers.setLocation(ucBuilder.path("/get/{id}").buildAndExpand(event.getId()).toUri());
+        return new ResponseEntity<>(headers, HttpStatus.CREATED);
 
     }
 
