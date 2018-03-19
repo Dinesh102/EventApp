@@ -23,7 +23,8 @@ import org.springframework.http.HttpStatus;
 //import com.kgfsl.forum.Agenda;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:10001", maxAge = 3600)
+// @CrossOrigin(origins = "http://localhost:10001", maxAge = 3600)
+@CrossOrigin()
 @RequestMapping("api/events")
 public class EventController {
 
