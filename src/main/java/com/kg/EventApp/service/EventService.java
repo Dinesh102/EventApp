@@ -15,4 +15,5 @@ public interface EventService {
 
     public void delete(Long id);
 
+    public List<Event> get3();
 }
