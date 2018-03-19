@@ -67,7 +67,7 @@ public class EventController {
     }
 	
 	 @GetMapping("/getThree")
-        public @ResponseBody ResponseEntity<List<Event>> get3()(){
+        public @ResponseBody ResponseEntity<List<Event>> get3(){
             return new ResponseEntity<>(eventService.get3(),HttpStatus.OK);
         }
     }
