@@ -65,4 +65,11 @@ public class EventController {
         eventService.delete(eventId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+	
+	 @GetMapping("/getThree"){
+        public @ResponseBody ResponseEntity<List<Event>> all(){
+            return new ResponseEntity<>(eventService.get3(),HttpStatus.OK);
+        }
+    }
+
 }
