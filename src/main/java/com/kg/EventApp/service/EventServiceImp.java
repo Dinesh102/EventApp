@@ -5,6 +5,7 @@ import com.kg.EventApp.repository.EventRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.stream.Collectors;
 
 @Service("eventService")
 public class EventServiceImp implements EventService {
@@ -35,6 +36,12 @@ public class EventServiceImp implements EventService {
     public void delete(Long id) {
         // TODO Auto-generated method stub
         eventRepository.delete(id);
+    }
+    
+      @Override
+    public List<Event> get3() {
+        // TODO Auto-generated method stub
+        return eventRepository.findAll().stream().limit(3).collect(Collectors.toList());
     }
 
 }
