@@ -71,5 +71,3 @@ public class EventController {
             return new ResponseEntity<>(eventService.get3(),HttpStatus.OK);
         }
     }
-
-}
