@@ -20,11 +20,11 @@ public class Project {
 	private String Sensor3;	
 
 	public Long getId() {
-		return Id;
+		return ID;
 	}
 
 	public void setId(Long ID) {
-		this.I = ID;
+		this.ID = ID;
 	}
 
 	public String getSensor1() {
