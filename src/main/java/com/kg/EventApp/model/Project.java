@@ -8,7 +8,7 @@ public class Project {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long agendaId;
+	private Long ID;
 
 	@Column
 	private String Sensor1;
@@ -19,16 +19,16 @@ public class Project {
 	@Column
 	private String Sensor3;	
 
-	public Long getaId() {
-		return agendaId;
+	public Long getId() {
+		return Id;
 	}
 
-	public void setaId(Long agendaId) {
-		this.agendaId = agendaId;
+	public void setId(Long ID) {
+		this.I = ID;
 	}
 
-	public String Sensor1() {
-		return time;
+	public String getSensor1() {
+		return Sensor1;
 	}
 
 	public void setSensor1(String Sensor1) {
@@ -36,7 +36,7 @@ public class Project {
 	}
 
 	public String getSensor2() {
-		return Sensor1;
+		return Sensor2;
 	}
 
 		public void setSensor2(String Sensor2) {
