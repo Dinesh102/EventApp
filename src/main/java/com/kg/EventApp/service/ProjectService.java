@@ -9,7 +9,7 @@ public interface ProjectService {
 
     public List<Project> getAll();
 
-    public Event save(Project project);
+    public Project save(Project project);
 
     //public Event find(long id);
 
