@@ -1,6 +1,6 @@
 package com.kg.EventApp.service;
 
-import com.kg.EventApp.model.Event;
+import com.kg.EventApp.model.Project;
 import java.util.List;
 
 
