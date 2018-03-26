@@ -40,24 +40,24 @@ public class ProjectController {
     public ResponseEntity<?> post(@RequestBody Project project, UriComponentsBuilder ucBuilder) {
         projectService.save(project);
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/get/{id}").buildAndExpand(event.getId()).toUri());
+        headers.setLocation(ucBuilder.path("/get/{id}").buildAndExpand(project.getId()).toUri());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
 
-    }
+//     }
 
-    @GetMapping("/get/{ID}")
-    public @ResponseBody ResponseEntity<?> getById(@PathVariable Long ID) {
+//     @GetMapping("/get/{ID}")
+//     public @ResponseBody ResponseEntity<?> getById(@PathVariable Long ID) {
 
-        Project project = projectService.find(ID);
-        return new ResponseEntity<>(project, HttpStatus.OK);
+//         Project project = projectService.find(ID);
+//         return new ResponseEntity<>(project, HttpStatus.OK);
 
-    }
+//     }
 
-    @PutMapping("/put/{ID}")
-    public ResponseEntity<?> put(@PathVariable Long ID, @RequestBody Project project) {
-		projectService.save(project);
-        return new ResponseEntity<>(project, HttpStatus.OK);
-    }
+//     @PutMapping("/put/{ID}")
+//     public ResponseEntity<?> put(@PathVariable Long ID, @RequestBody Project project) {
+// 		projectService.save(project);
+//         return new ResponseEntity<>(project, HttpStatus.OK);
+//     }
 
 //     @DeleteMapping("/delete/{eventId}")
 //     public ResponseEntity<?> delete(@PathVariable Long eventId) {
