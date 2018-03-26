@@ -29,45 +29,45 @@ import org.springframework.http.HttpStatus;
 public class ProjectController {
 
     @Autowired
-    private ProjectService eventService;
+    private ProjectService projectService;
 
     @GetMapping("/get")
-    public @ResponseBody ResponseEntity<List<Event>> all() {
-        return new ResponseEntity<>(eventService.getAll(), HttpStatus.OK);
+    public @ResponseBody ResponseEntity<List<project>> all() {
+        return new ResponseEntity<>(projectService.getAll(), HttpStatus.OK);
     }
 
     @PostMapping("/post")
-    public ResponseEntity<?> post(@RequestBody Event event, UriComponentsBuilder ucBuilder) {
-        eventService.save(event);
+    public ResponseEntity<?> post(@RequestBody Project project, UriComponentsBuilder ucBuilder) {
+        projectService.save(project);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("/get/{id}").buildAndExpand(event.getId()).toUri());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
 
     }
 
-    @GetMapping("/get/{eventId}")
-    public @ResponseBody ResponseEntity<?> getById(@PathVariable Long eventId) {
+    @GetMapping("/get/{ID}")
+    public @ResponseBody ResponseEntity<?> getById(@PathVariable Long ID) {
 
-        Event event = eventService.find(eventId);
-        return new ResponseEntity<>(event, HttpStatus.OK);
+        Project project = projectService.find(ID);
+        return new ResponseEntity<>(project, HttpStatus.OK);
 
     }
 
-    @PutMapping("/put/{eventId}")
-    public ResponseEntity<?> put(@PathVariable Long eventId, @RequestBody Event event) {
-		eventService.save(event);
-        return new ResponseEntity<>(event, HttpStatus.OK);
+    @PutMapping("/put/{ID}")
+    public ResponseEntity<?> put(@PathVariable Long ID, @RequestBody Project project) {
+		projectService.save(project);
+        return new ResponseEntity<>(project, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{eventId}")
-    public ResponseEntity<?> delete(@PathVariable Long eventId) {
-        //Event currentevent = eventService.find(eventId);
-        eventService.delete(eventId);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//     @DeleteMapping("/delete/{eventId}")
+//     public ResponseEntity<?> delete(@PathVariable Long eventId) {
+//         //Event currentevent = eventService.find(eventId);
+//         eventService.delete(eventId);
+//         return new ResponseEntity<>(HttpStatus.OK);
+//     }
 	
-	 @GetMapping("/getThree")
-        public @ResponseBody ResponseEntity<List<Event>> get3(){
-            return new ResponseEntity<>(eventService.get3(),HttpStatus.OK);
-        }
+// 	 @GetMapping("/getThree")
+//         public @ResponseBody ResponseEntity<List<Event>> get3(){
+//             return new ResponseEntity<>(eventService.get3(),HttpStatus.OK);
+//         }
     }
