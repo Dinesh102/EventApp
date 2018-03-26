@@ -1,7 +1,7 @@
 package com.kg.EventApp.service;
 
-import com.kg.EventApp.model.Event;
-import com.kg.EventApp.repository.EventRepository;
+import com.kg.EventApp.model.Project;
+import com.kg.EventApp.repository.ProjectRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
