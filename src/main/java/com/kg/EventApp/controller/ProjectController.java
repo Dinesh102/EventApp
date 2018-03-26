@@ -1,7 +1,7 @@
 package com.kg.EventApp.controller;
 
-import com.kg.EventApp.model.Event;
-import com.kg.EventApp.service.EventService;
+import com.kg.EventApp.model.Project;
+import com.kg.EventApp.service.ProjectService;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
