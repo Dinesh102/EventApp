@@ -32,7 +32,7 @@ public class ProjectController {
     private ProjectService projectService;
 
     @GetMapping("/get")
-    public @ResponseBody ResponseEntity<List<project>> all() {
+    public @ResponseBody ResponseEntity<List<Project>> all() {
         return new ResponseEntity<>(projectService.getAll(), HttpStatus.OK);
     }
 
