@@ -1,6 +1,6 @@
 package com.kg.EventApp.repository;
 
-import com.kg.EventApp.model.Event;
+import com.kg.EventApp.model.Project;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
